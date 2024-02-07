@@ -15,7 +15,7 @@ class Router:
     def add(self, url, path):
         Router.paths.append((url, path))
     
-    def route(self, url):
+    def route(self, method, url, body):
         for path in Router.paths:
             if (path[0] == url):
                 return self.wrapper(path[1])
